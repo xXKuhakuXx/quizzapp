@@ -26,19 +26,33 @@ function alterarAssunto(){
 
 alterarAssunto()
 
-function inserirResultado(){
-    const sectionPontuacao = document.querySelector(".pontuacao")
-    const divAssunto = document.querySelector(".assunto")
-    const pontos = localStorage.getItem("pontos")
+function inserirResultado() {
+    const sectionPontuacao = document.querySelector(".pontuacao");
+    const divAssunto = document.querySelector(".assunto");
+    const pontos = localStorage.getItem("pontos");
+
+    let textoNotaPorEscrito; 
+
+    if (pontos > 8) {
+        textoNotaPorEscrito = "Parabens, você foi bem!";
+    } else if (pontos < 8 && pontos > 6) {
+        textoNotaPorEscrito = "Bom, você foi na média.";
+    } else if (pontos < 6 && pontos > 4) {
+        textoNotaPorEscrito = "Precisa se esforçar mais.";
+    } else {
+        textoNotaPorEscrito = "Você foi mal.";
+    }
 
     sectionPontuacao.innerHTML = `
         ${divAssunto.outerHTML}
 
         <strong>${pontos}</strong>
 
-        <p>de 10</p>
-    `
+        <p>${textoNotaPorEscrito} de 10 acertou ${pontos}</p>
+    `;
 }
+
+
 
 function jogarNovamente(){
     localStorage.removeItem("pontos")
