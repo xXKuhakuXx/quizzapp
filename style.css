@@ -144,6 +144,71 @@ main {
     background: var(--bg-javascript);
 }
 
+.formulario {
+    margin-top: 40px;
+}
+
+.formulario h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    margin-bottom: 16px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formulario label {
+    font-size: 16px;
+    color: var(--secondary-text-color);
+}
+
+.formulario input {
+    padding: 8px;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.formulario button {
+    background: var(--purple);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background: darken(var(--purple), 10%);
+}
+
+@media(min-width: 1100px){
+    .formulario h2 {
+        font-size: 32px;
+    }
+
+    .formulario label {
+        font-size: 18px;
+    }
+
+    .formulario input {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .formulario button {
+        font-size: 20px;
+        padding: 16px;
+    }
+}
+
+
 @media(min-width: 1100px){
     body{
         background: var(--bg-desktop) var(--bg-color);
